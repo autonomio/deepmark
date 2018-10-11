@@ -42,7 +42,7 @@ model.fit(train_images, train_labels, epochs=10, batch_size=256, verbose=0)
 t1=time.time()
 # TEST ENDS 
 
-test_loss, test_acc = network.evaluate(test_images, test_labels)
+test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 print(t1-t0)
 print('test_acc:', test_acc)
