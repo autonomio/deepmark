@@ -5,11 +5,11 @@ BENCHMARKS:
 0.3 seconds on i7-7700k (force CPU)
 1.3 seconds on i3-6100 & 1050Ti
 
+TEST ACCURACY: ~99%
+
 '''
 
 import time
-import tensorflow as tf
-import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.utils import to_categorical
@@ -36,9 +36,13 @@ model.compile(optimizer='rmsprop',
                 loss='categorical_crossentropy',
                 metrics=['accuracy'])
 
+# TEST BEGINS
 t0 = time.time()
 model.fit(train_images, train_labels, epochs=10, batch_size=256, verbose=0)
-test_loss, test_acc = network.evaluate(test_images, test_labels)
 t1=time.time()
+# TEST ENDS 
+
+test_loss, test_acc = network.evaluate(test_images, test_labels)
+
 print(t1-t0)
 print('test_acc:', test_acc)
