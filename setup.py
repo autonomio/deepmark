@@ -15,7 +15,7 @@ MAINTAINER_EMAIL = 'mailme@mikkokotila.com'
 URL = 'http://autonom.io'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/autonomio/deepmark/'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 try:
     from setuptools import setup
@@ -56,7 +56,8 @@ if __name__ == "__main__":
           version=VERSION,
           download_url=DOWNLOAD_URL,
           install_requires=install_requires,
-          packages=['deepmark'],
+          packages=['deepmark',
+                    'deepmark.models'],
 
           classifiers=[
                  'Intended Audience :: Science/Research',
